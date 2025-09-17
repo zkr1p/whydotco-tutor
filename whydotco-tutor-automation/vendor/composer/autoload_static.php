@@ -16,6 +16,10 @@ class ComposerStaticInit09a4e754c52f141795f64dc71db87f12
     );
 
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'WhydotCo\\TutorAutomation\\' => 25,
+        ),
         'P' => 
         array (
             'Psr\\Log\\' => 8,
@@ -39,6 +43,10 @@ class ComposerStaticInit09a4e754c52f141795f64dc71db87f12
     );
 
     public static $prefixDirsPsr4 = array (
+        'WhydotCo\\TutorAutomation\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
@@ -1381,8 +1389,8 @@ class ComposerStaticInit09a4e754c52f141795f64dc71db87f12
         'WhydotCo\\TutorAutomation\\Core\\Activator' => __DIR__ . '/../..' . '/src/Core/Activator.php',
         'WhydotCo\\TutorAutomation\\Core\\Deactivator' => __DIR__ . '/../..' . '/src/Core/Deactivator.php',
         'WhydotCo\\TutorAutomation\\Core\\Plugin' => __DIR__ . '/../..' . '/src/Core/Plugin.php',
-        'WhydotCo\\TutorAutomation\\Database\\Migrations\\CreateDownloadableProductPermissionsNewTable' => __DIR__ . '/../..' . '/src/Database/Migrations/2025_09_12_100000_create_downloadable_product_permissions_new_table.php',
-        'WhydotCo\\TutorAutomation\\Database\\Migrations\\CreateLogsTable' => __DIR__ . '/../..' . '/src/Database/Migrations/2025_09_12_100000_create_logs_table.php',
+        'WhydotCo\\TutorAutomation\\Database\\Migrations\\CreateDownloadableProductPermissionsNewTable' => __DIR__ . '/../..' . '/src/Database/Migrations/CreateDownloadableProductPermissionsNewTable.php',
+        'WhydotCo\\TutorAutomation\\Database\\Migrations\\CreateLogsTable' => __DIR__ . '/../..' . '/src/Database/Migrations/CreateLogsTable.php',
         'WhydotCo\\TutorAutomation\\Database\\Migrator' => __DIR__ . '/../..' . '/src/Database/Migrator.php',
         'WhydotCo\\TutorAutomation\\Infrastructure\\Api\\ApiManager' => __DIR__ . '/../..' . '/src/Infrastructure/Api/ApiManager.php',
         'WhydotCo\\TutorAutomation\\Infrastructure\\Api\\Endpoints\\SyncEndpoint' => __DIR__ . '/../..' . '/src/Infrastructure/Api/Endpoints/SyncEndpoint.php',

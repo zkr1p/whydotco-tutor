@@ -21,7 +21,7 @@
     },
     "autoload": {
         "psr-4": {
-            "WhydotCo\\\\TutorAutomation\\\\": "src/"
+            "WhydotCo\\TutorAutomation\\": "src/"
         }
     },
     "scripts": {
