@@ -3,7 +3,7 @@
  * Plugin Name:       WhydotCo Tutor Automation Pro
  * Plugin URI:        https://whydotco.co/
  * Description:       Gestiona la automatización avanzada entre Tutor LMS y WooCommerce Subscriptions, incluyendo el acceso a cursos y productos descargables.
- * Version:           1.0.3
+ * Version:           1.0.5
  * Author:            WhydotCo
  * Author URI:        https://whydotco.co/
  * License:           GPL v2 or later

@@ -2,23 +2,25 @@
 
 namespace WhydotCo\TutorAutomation\Core;
 
-// Importamos todas las clases que vamos a necesitar para que el autoloader las encuentre.
-// Usamos "alias" (ej. 'as AdminModule') para evitar conflictos de nombres,
-// ya que muchos módulos tendrán una clase principal llamada 'Module'.
-use WhydotCo\TutorAutomation\Admin\Module as AdminModule;
-use WhydotCo\TutorAutomation\Assets;
+// Interfaces y contratos del plugin.
 use WhydotCo\TutorAutomation\Common\Contracts\LoggerInterface;
+
+// Componentes de base y de infraestructura.
 use WhydotCo\TutorAutomation\Database\Migrator;
-use WhydotCo\TutorAutomation\DownloadManager\Module as DownloadManagerModule;
-use WhydotCo\TutorAutomation\EmailManager\Module as EmailManagerModule;
 use WhydotCo\TutorAutomation\Infrastructure\Api\ApiManager;
 use WhydotCo\TutorAutomation\Infrastructure\Cron\CronManager;
 use WhydotCo\TutorAutomation\Infrastructure\Logging\Logger;
+
+// Integraciones con otros plugins.
 use WhydotCo\TutorAutomation\Integrations\TutorLMS;
 use WhydotCo\TutorAutomation\Integrations\WooCommerce;
-use WhydotCo\TutorAutomation\SubscriptionManager\Module as SubscriptionManagerModule;
-use WhydotCo\TutorAutomation\Modules\WooCommerceTweaks\Module as WooCommerceTweaksModule;
 
+// Módulos principales del plugin (con namespaces corregidos).
+use WhydotCo\TutorAutomation\Modules\Admin\Module as AdminModule;
+use WhydotCo\TutorAutomation\Modules\DownloadManager\Module as DownloadManagerModule;
+use WhydotCo\TutorAutomation\Modules\EmailManager\Module as EmailManagerModule;
+use WhydotCo\TutorAutomation\Modules\SubscriptionManager\Module as SubscriptionManagerModule;
+use WhydotCo\TutorAutomation\Modules\WooCommerceTweaks\Module as WooCommerceTweaksModule;
 
 /**
  * La clase principal del plugin.
@@ -27,6 +29,7 @@ use WhydotCo\TutorAutomation\Modules\WooCommerceTweaks\Module as WooCommerceTwea
  * Sigue el patrón Singleton para asegurar una única instancia.
  */
 final class Plugin {
+
     /**
      * La única instancia de la clase Plugin.
      * @var Plugin|null
@@ -80,7 +83,7 @@ final class Plugin {
     private function load_infrastructure(): void {
         // El Logger es el primero, ya que otros servicios pueden necesitarlo.
         $this->infrastructure['logger'] = new Logger( 'WhydotCo Tutor Automation' );
-        
+
         $this->infrastructure['cron_manager'] = new CronManager();
         $this->infrastructure['api_manager'] = new ApiManager();
     }
@@ -143,7 +146,7 @@ final class Plugin {
             false,
             dirname( WHYDOTCO_TUTOR_AUTOMATION_BASENAME ) . '/languages'
         );
-        
+
         // Llama al método 'init()' de cada módulo para que registren sus propios hooks.
         foreach ( $this->modules as $module ) {
             if ( method_exists( $module, 'init' ) ) {
